@@ -1,0 +1,17 @@
+{{!--
+
+XXX:jmf
+To use this, set {{ author }} in the yaml Front Matter of the file where you want to include an autograph.
+For example:
+
+templates/src/pages/index.html
+---
+author: Charles Dickens
+---
+{{> autograph}}
+
+The above example would find an image name "assets/img/autograph-Charles Dickens.png"
+
+--}}
+
+<img class="autograph" src="assets/img/autograph-{{ author }}.png" alt="{{ author }}" mc:edit="postcard">

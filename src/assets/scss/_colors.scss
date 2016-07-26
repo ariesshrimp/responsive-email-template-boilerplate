@@ -1,0 +1,150 @@
+// XXX:jmf TAKEN DIRECTLY FROM IDO-1
+
+// Gray ///////////////////////////////////////////////////////////////////////
+$g99: #fcfcfc; // $lightesterest gray
+$g98: #fafafa; // $lightester
+$g97: #f7f7f7; // $lightest
+$g96: #f5f5f5; // $lightest
+$g90: #e5e5e5; // $lighter
+$g85: #d9d9d9; // $light gray
+$g80: #cccccc; // $gray
+$g60: #999999; // $dark
+$g50: #808080; // $darker
+$g40: #666666; // $darkest
+$g35: #555555; // $darkesty
+$g30: #4d4d4d; // $darkester
+$g20: #333333; // $darkesterest gray
+
+// Grays
+$lightesterest-gray: $g99;
+$lightester-gray: $g98;
+$lightest-gray: $g96;
+$lighter-gray: $g90;
+$light-gray: $g85;
+$gray: $g80;
+$gray-gray: $g80;
+$dark-gray: $g60;
+$darker-gray: $g50;
+$darkest-gray: $g40;
+$darkesty-gray: $g35;
+$darkester-gray: $g30;
+$darkesterest-gray: $g20;
+
+// Grayscale gray(90);
+@function gray($lightness) {
+    @return lighten(black, $lightness);
+}
+@function g($lightness) {
+    @return lighten(black, $lightness);
+}
+
+// Transparents ///////////////////////////////////////////////////////////////
+
+// Transparent Black
+@function black($opacity) { @return rgba(0,0,0,$opacity); }
+
+// Transparent White
+@function white($opacity){ @return rgba(255,255,255,$opacity); }
+
+// Transparent Red
+@function t-red($opacity) { @return rgba(190, 47, 58, $opacity); }
+
+// Transparent Orange
+@function t-orange($opacity) { @return rgba(255, 140, 0, $opacity); }
+
+// Transparent Yellow
+@function t-yellow($opacity) { @return rgba(255, 213, 0, $opacity); }
+
+// Transparent Green
+@function t-green($opacity) { @return rgba(85, 165, 0, $opacity); }
+
+// Transparent Blue
+@function t-blue($opacity) { @return rgba(0, 128, 204, $opacity); }
+
+// Reds ///////////////////////////////////////////////////////////////////////
+$red: #be2f3a;
+$lightest-red:      lighten($red, 50%);
+$lighter-red:       lighten($red, 40%);
+$light-red:         lighten($red, 25%);
+$dark-red:          darken($red, 15%);
+$darker-red:        darken($red, 20%);
+$darkest-red:       darken($red, 30%);
+
+// Oranges ////////////////////////////////////////////////////////////////////
+$orange: #ff8c00;
+$lighter-orange:    lighten($orange, 30%);
+$light-orange:      lighten($orange, 15%);
+$dark-orange:       darken($orange, 8%);
+$darker-orange:     darken($orange, 15%);
+
+// Yellows ////////////////////////////////////////////////////////////////////
+$yellow: #ffd500;
+$light-yellow:      lighten($yellow, 20%);
+$lighter-yellow:    lighten($yellow, 40%);
+$lightest-yellow:   lighten($yellow, 48%);
+$lightester-yellow:   lighten($yellow, 44%);
+$dark-yellow:       darken($yellow, 5%);
+
+$staff-yellow: #f3cb00;
+$staff-dark-yellow: darken($staff-yellow, 3%);
+
+// Greens /////////////////////////////////////////////////////////////////////
+$green: #0f9900;
+$light-green:       lighten($green, 3%);
+$lighter-green:     lighten($green, 6%);
+$lightest-green:    lighten($green, 9%);
+$dark-green:        darken($green, 5%);
+$darker-green:      darken($green, 10%);
+
+// Blues //////////////////////////////////////////////////////////////////////
+$blue: #0080cc;  //
+$light-blue:                lighten($blue, 25%);
+$lighter-blue:              lighten($blue, 40%);
+$lightest-blue:             lighten($blue, 52%);
+$lightester-blue:           lighten($blue, 58%);
+$dark-blue:                 darken($blue, 10%);
+$darker-blue:               darken($blue, 20%);
+$darkest-blue:              darken($blue, 30%);
+$transparent-blue:          rgba(0, 144, 230, .8);
+$light-transparent-blue:    rgba(0, 144, 230, .4);
+$darker-transparent-blue:   rgba(0, 96, 153, .4);
+$transparent-lightest-blue: transparentize($lightest-blue, .3);
+$beautiful-background-blue: lighten($blue, 55%);
+$beautiful-background-gray: g(97);
+
+// Dynamic Color Variables ////////////////////////////////////////////////////
+
+// Type
+$body-color: $g35;
+$primary-heading-color: $g40;
+$alt-heading-color: $green;
+
+// Link colors
+$link-color: $blue;
+$link-visited-color: $blue;
+$link-hover-color: $dark-blue;
+$link-active-color: $darker-blue;
+
+// Other elements
+$active-nav: $orange;
+$admin-color: $orange;
+$background-blue: desaturate(lighten($blue, 5), 55);
+$bg1: white(1);
+$bg2: white(.1);
+$block-border-color: black(.075);
+$block-shadow-color: black(.15);
+/// Button Blue
+/// @type Color
+$button-blue: lighten($blue, 15%);
+$control-background-color: $g98;
+$field-borders: $g85;
+$hr-color: black(.075);
+$hr-highlight: white(.5);
+$inactive-asset-link: gray(50);
+$list-item-hover: $lightest-blue;
+$meta-text: $g50;
+$shadow-color: black(.2);
+
+// Staff
+$staff-type: $g96; // what's this?
+$staff-color: $lighter-yellow;

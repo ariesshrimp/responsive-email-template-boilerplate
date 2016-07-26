@@ -1,0 +1,55 @@
+---
+subject: "*|MC:SUBJECT|*"
+recipient: "*|FNAME|*"
+---
+{{!--
+XXX:jmf For help with the weird "*|syntax|*" above,
+see: http://kb.mailchimp.com/merge-tags/all-the-merge-tags-cheat-sheet
+--}}
+
+{{!--
+XXX:jmf
+You MUST use these <spacer> elements to enforce whitespace in your designs.
+Several mail clients (notably various Outlook versions) do not support
+padding or margin rules. The size="" attribute specifies the number of pixels
+you wish the space to be.
+--}}
+
+<spacer size="10"></spacer>
+{{> logo}}
+
+
+<row>
+    <columns>
+        <h6 class="text-center" mc:edit="intro-header">Write an intro header (e.g. "Announcing...")</h6>
+        <h1 class="text-center" mc:edit="main-header">Main thing you're announcing! (e.g. "Confidential Listings!")</h1>
+    </columns>
+</row>
+
+{{!--
+XXX:jmf make sure to check the compiled output
+in your MailChimp destination.
+The compiler currently swaps any ' (e.g. we're, it's, they're...)
+for the HTML entity &apos;, which is not supported in Outlook clients
+Track the issue here: https://github.com/zurb/foundation-emails/issues/281
+--}}
+<row>
+    <columns>
+        <p mc:edit="copy1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <spacer size="15"></spacer>
+        <center>
+            <img mc:edit="image1" src="/assets/img/placeholder.jpg" alt="Idealist.org" />
+        </center>
+        <spacer size="15"></spacer>
+    </columns>
+</row>
+
+<row>
+    <columns>
+        <strong>Check out our <a href="http://www.idealist.org/info/Help" target="_blank">help page</a> for more info, or <a href="http://www.idealist.org/contact-us" target="_blank">contact our support team</a> with any questions.</strong>
+        <spacer size="35"></spacer>
+        <p mc:edit="sign-off">Sign off text (e.g. "Sincerely", "Yours", ...),</p>
+        {{> autograph}}
+        <p mc:edit="title">Title</p>
+    </columns>
+</row>

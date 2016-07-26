@@ -1,0 +1,41 @@
+{{!--
+
+XXX:jmf
+To use this, set {{ CTALink }} in the yaml Front Matter of the file where you want to include a CTA.
+For example:
+
+templates/src/pages/index.html
+---
+CTALink: "http://www.google.com"
+---
+{{> cta}}
+
+--}}
+
+{{!--
+
+TODO:jmf the click box on this <a> is broken on some Windows touch devices.
+I think it needs nested <a> tags, but everything I tried broke the layout badly.
+Because the link wraps a table cell, Windows touch devices might
+let users select the link text, rather than intuiting that they want to
+follow the link. An <a> wrapping the text within the <td class="button">
+didn't work in most mail clients.
+
+--}}
+<row>
+    <columns large="3"></columns>
+    <columns large="6">
+        <a href={{ CTALink }} target="_blank">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="button">
+                            Post a confidential listing
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </a>
+    </columns>
+    <columns large="3"></columns>
+</row>

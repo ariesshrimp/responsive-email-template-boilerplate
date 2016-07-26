@@ -1,0 +1,86 @@
+// XXX:jmf ADAPTED FROM IDO-1
+// for example: rem values do not work in email clients, so we're using px directly
+
+// Elements
+$list-item-padding: 10px 10px;
+
+// Button Defaults
+$button-background          : $button-blue;
+$button-background-hover    : $blue;
+$button-background-active   : $dark-blue;
+
+$button-border              : 1px solid $button-background;
+$button-border-hover        : 1px solid $button-background-hover;
+$button-border-active       : 1px solid $button-background-active;
+
+$button-text-color          : white;
+$button-text-color-hover    : white;
+$button-text-color-active   : white;
+
+$button-font-weight         : 400;
+$button-padding             : $list-item-padding;
+$button-radius              : 3px;
+
+%base-button-styles {
+    border-top-left-radius: $button-radius;
+    border-top-right-radius: $button-radius;
+    border-bottom-right-radius: $button-radius;
+    border-bottom-left-radius: $button-radius;
+    transition:background-color .2s ease;
+    background-color:$button-background;
+    border-top-style: solid;
+    border-top-color: $button-background;
+    border-top-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: $button-background;
+    border-bottom-width: 1px;
+    border-left-style: solid;
+    border-left-color: $button-background;
+    border-left-width: 1px;
+    border-right-style: solid;
+    border-right-color: $button-background;
+    border-right-width: 1px;
+    color:$button-text-color;
+    display:inline-block;
+    font-weight:400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position:relative;
+    radius:3px;
+
+    &:hover {
+        color: $button-text-color-hover;
+        background-color: $button-background-hover;
+        border-top-style: solid;
+        border-top-color: $button-background-hover;
+        border-top-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: $button-background-hover;
+        border-bottom-width: 1px;
+        border-left-style: solid;
+        border-left-color: $button-background-hover;
+        border-left-width: 1px;
+        border-right-style: solid;
+        border-right-color: $button-background-hover;
+        border-right-width: 1px;
+    }
+
+    &:active {
+        color: $button-text-color-active;
+        background-color: $button-background-active;
+        border-top-style: solid;
+        border-top-color: $button-background-active;
+        border-top-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: $button-background-active;
+        border-bottom-width: 1px;
+        border-left-style: solid;
+        border-left-color: $button-background-active;
+        border-left-width: 1px;
+        border-right-style: solid;
+        border-right-color: $button-background-active;
+        border-right-width: 1px;
+    }
+}

@@ -1,0 +1,75 @@
+<!--
+XXX:jmf
+MailChimp does not allow users to configure custom,
+text-only versions of their HTML email campaigns.
+MailChimp dynamically generates these by parsing your HTML.
+You just gotta trust. I filed a complaint, so if you're
+reading this in the future and wondering "how do I configure a text-only...?"
+the answer as of 06-04-2016 is you don't.
+ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{{ subject }}</title>
+</head>
+
+<body>
+    <!--
+    XXX:jmf The <span id="preview-text"> is what email clients will use to preview the message content from the inbox.
+    It must be at least 91 characters long.
+    TODO:jmf how can this be made editable from Mailchimp...?
+    By definition it's perfectly hidden, so it won't appear as an editable field...
+    It's commented out until this issue is resolved.
+    -->
+    <!-- <span id="preview-text" style="display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+        color: transparent !important;
+        font-size: 0 !important;
+        background-color: transparent !important;
+        mso-hide: all;">Example preview text...</span>
+    -->
+
+    <!--
+    XXX:jmf
+    Don't delete this <style> comment below.
+    It's used in the build process to in-line media queries.
+    -->
+    <!-- <style> -->
+
+    <!-- Main e-mail content pulled from src/pages -->
+    <table class="body background-color">
+        <tr>
+            <td class="center padding-top" align="center" valign="top">
+                <center>
+                    <container class="body-content padding-sides">
+                        {{> body}}
+                    </container>
+                </center>
+            </td>
+        </tr>
+        <tr>
+            <td class="center" align="center" valign="top">
+                <center>
+                    {{> contact-info}}
+                </center>
+                <spacer size="5"></spacer>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Legal info pulled from src/partials -->
+    {{> footer}}
+
+    <!-- prevent Gmail on iOS font size manipulation -->
+    <div style="display:none; white-space:nowrap; font:15px courier; line-height:0;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>
+</body>
+
+</html>
