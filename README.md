@@ -1,5 +1,7 @@
 # Mailchimp Template System
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/joefraley/responsive-email-template-boilerplate.svg)](https://greenkeeper.io/)
+
 ## What is this repo?
 This repo is a build system for generating new HTML emails, with an emphasis on reusable templates that can be edited from within the Mailchimp.com UI.  
 
